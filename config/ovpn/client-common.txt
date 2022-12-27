@@ -1,0 +1,15 @@
+client
+dev tun
+proto tcp
+remote vpn.0000-vpn.com 443
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+tls-client
+key-direction 1
+remote-cert-tls server
+auth SHA512
+cipher AES-256-CBC
+ignore-unknown-option block-outside-dns
+verb 3
