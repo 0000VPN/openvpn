@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     ports:
       - "443:997/tcp"
-      - "7552:7552/tcp"
+      #- "7552:7552/tcp"
     volumes:
       - config:/etc/openvpn/server
       - ccd:/etc/openvpn/server/ccd
