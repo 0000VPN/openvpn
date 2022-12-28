@@ -21,6 +21,6 @@ VOLUME /etc/openvpn/server/logs
 
 
 EXPOSE 997/tcp
-EXPOSE 7552/tcp
+#EXPOSE 7552/tcp
 COPY ./init.sh /
 ENTRYPOINT ["/init.sh"]
