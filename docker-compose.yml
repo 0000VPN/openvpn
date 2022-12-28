@@ -42,7 +42,7 @@ volumes:
     driver_opts:
       type: "nfs"
       o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
-      device: ":/var/nfs/test/add"
+      device: ":/mnt/add"
 #  logs:
 #    driver: local
 #    driver_opts:
