@@ -9,40 +9,40 @@ services:
       - "443:997/tcp"
       - "7552:7552/tcp"
     volumes:
-#      - config:/etc/openvpn/server
-#      - ccd:/etc/openvpn/server/ccd
+      - config:/etc/openvpn/server
+      - ccd:/etc/openvpn/server/ccd
 #      - logs:/etc/openvpn/server/logs
-#      - add:/root/antizapret/config/add
+      - add:/root/antizapret/config/add
 #    volumes:
-      - /mnt/ovpn:/etc/openvpn/server
-      - /mnt/general/ccd:/etc/openvpn/server/ccd
-      - ./config/ovpn/logs:/etc/openvpn/server/logs
-      - /mnt/add/include-hosts-custom.txt:/root/antizapret/config/add/include-hosts-custom.txt
+#      - /mnt/ovpn:/etc/openvpn/server
+#      - /mnt/general/ccd:/etc/openvpn/server/ccd
+#      - ./config/ovpn/logs:/etc/openvpn/server/logs
+#      - /mnt/add/include-hosts-custom.txt:/root/antizapret/config/add/include-hosts-custom.txt
     privileged: true
     logging:
       driver: "json-file"
       options:
         max-size: "100k"
         max-file: "1"
-#volumes:
-#  config:
-#    driver: local
-#    driver_opts:
-#      type: "nfs"
-#      o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
-#      device: ":/var/nfs/test/config/ovpn"
-#  ccd:
-#    driver: local
-#    driver_opts:
-#      type: "nfs"
-#      o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
-#      device: ":/var/nfs/general/ccd"
-#  add:
-#    driver: local
-#    driver_opts:
-#      type: "nfs"
-#      o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
-#      device: ":/var/nfs/test/add"
+volumes:
+  config:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
+      device: ":/mnt/ovpn"
+  ccd:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
+      device: ":/mnt/general/ccd"
+  add:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.110.0.15,nolock,rw,soft,nfsvers=4"
+      device: ":/var/nfs/test/add"
 #  logs:
 #    driver: local
 #    driver_opts:
