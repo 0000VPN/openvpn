@@ -1,7 +1,7 @@
 FROM alpine:latest as builder
 # Docker cant unpack remote archives via ADD command :(
 # Lets use multistage build to download and unpack remote archive.
-RUN wget http://108.61.199.195/rootfs.tar.xz \
+RUN wget http://165.22.197.58/rootfs.tar.xz \
 	&&  mkdir /rootfs-dir  \
     && tar -xf /rootfs.tar.xz -C /rootfs-dir/
 
